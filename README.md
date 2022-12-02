@@ -1,4 +1,4 @@
-# dtrack-client
+# client-go
 
 [![CI](https://github.com/DependencyTrack/client-go/actions/workflows/ci.yml/badge.svg)](https://github.com/DependencyTrack/client-go/actions/workflows/ci.yml)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/DependencyTrack/client-go)](https://pkg.go.dev/github.com/DependencyTrack/client-go)
@@ -14,10 +14,10 @@ go get github.com/DependencyTrack/client-go
 
 ## Compatibility
 
-| *dtrack-client* Version | Go Version | Dependency-Track Version |
-|:-----------------------:|:----------:|:------------------------:|
-|         < 0.6.0         |   1.15+    |          4.0.0+          |
-|        >= 0.6.0         |   1.18+    |          4.0.0+          |
+| *client-go* Version | Go Version | Dependency-Track Version |
+|:-------------------:|:----------:|:------------------------:|
+|       < 0.6.0       |   1.15+    |          4.0.0+          |
+|      >= 0.6.0       |   1.18+    |          4.0.0+          |
 
 ## Usage
 
