@@ -16,8 +16,7 @@ go get github.com/DependencyTrack/client-go
 
 | *client-go* Version | Go Version | Dependency-Track Version |
 |:-------------------:|:----------:|:------------------------:|
-|       < 0.6.0       |   1.15+    |          4.0.0+          |
-|      >= 0.6.0       |   1.18+    |          4.0.0+          |
+|      >= 0.8.0       |   1.18+    |          4.0.0+          |
 
 ## Usage
 
