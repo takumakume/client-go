@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/nscuro/dtrack-client"
+	"github.com/DependencyTrack/client-go"
 )
 
 // This example demonstrates how to fetch all findings for a given project.

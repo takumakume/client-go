@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nscuro/dtrack-client/notification"
+	"github.com/DependencyTrack/client-go/notification"
 )
 
 // This example demonstrates how to parse and process notifications.

@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/nscuro/dtrack-client"
+	"github.com/DependencyTrack/client-go"
 )
 
 // This example demonstrates how to upload a Bill of Materials and wait for its processing to complete.

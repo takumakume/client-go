@@ -1,4 +1,4 @@
-module github.com/nscuro/dtrack-client
+module github.com/DependencyTrack/client-go
 
 go 1.18
 

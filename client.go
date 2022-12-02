@@ -17,7 +17,7 @@ import (
 
 const (
 	DefaultTimeout   = 10 * time.Second
-	DefaultUserAgent = "github.com/nscuro/dtrack-client"
+	DefaultUserAgent = "github.com/DependencyTrack/client-go"
 )
 
 type contextKey string
