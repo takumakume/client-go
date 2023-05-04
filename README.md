@@ -15,8 +15,9 @@ go get github.com/DependencyTrack/client-go
 ## Compatibility
 
 | *client-go* Version | Go Version | Dependency-Track Version |
-|:-------------------:|:----------:|:------------------------:|
-|      >= 0.8.0       |   1.18+    |          4.0.0+          |
+| :-----------------: | :--------: | :----------------------: |
+|       v0.8.0        |   1.18+    |          4.0.0+          |
+|       v0.9.0+       |   1.19+    |          4.0.0+          |
 
 ## Usage
 
