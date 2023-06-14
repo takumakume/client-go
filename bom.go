@@ -40,6 +40,7 @@ type BOMVariant string
 
 const (
 	BOMVariantInventory           BOMVariant = "inventory"
+	BOMVariantVDR                 BOMVariant = "vdr" // Since v4.7.0
 	BOMVariantWithVulnerabilities BOMVariant = "withVulnerabilities"
 )
 
