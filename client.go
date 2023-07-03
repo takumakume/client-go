@@ -148,6 +148,19 @@ func withParams(params map[string]string) requestOption {
 	}
 }
 
+func withPathParams(params map[string]string) requestOption {
+	return func(req *http.Request) error {
+		if len(params) == 0 {
+			return nil
+		}
+
+		for k, v := range params {
+			req.URL.Path = strings.Replace(req.URL.Path, fmt.Sprintf("{%s}", k), v, -1)
+		}
+		return nil
+	}
+}
+
 func withBody(body interface{}) requestOption {
 	return func(req *http.Request) error {
 		if body == nil {
