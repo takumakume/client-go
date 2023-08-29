@@ -9,20 +9,35 @@ import (
 )
 
 type Policy struct {
-	UUID             uuid.UUID         `json:"uuid,omitempty"`
-	Name             string            `json:"name"`
-	Operator         string            `json:"operator"`
-	ViolationState   string            `json:"violationState"`
-	PolicyConditions []PolicyCondition `json:"policyConditions,omitempty"`
-	IncludeChildren  bool              `json:"includeChildren,omitempty"`
-	Global           bool              `json:"global,omitempty"`
-	Projects         []Project         `json:"projects,omitempty"`
-	Tags             []Tag             `json:"tags,omitempty"`
+	UUID             uuid.UUID            `json:"uuid,omitempty"`
+	Name             string               `json:"name"`
+	Operator         PolicyOperator       `json:"operator"`
+	ViolationState   PolicyViolationState `json:"violationState"`
+	PolicyConditions []PolicyCondition    `json:"policyConditions,omitempty"`
+	IncludeChildren  bool                 `json:"includeChildren,omitempty"`
+	Global           bool                 `json:"global,omitempty"`
+	Projects         []Project            `json:"projects,omitempty"`
+	Tags             []Tag                `json:"tags,omitempty"`
 }
 
 type PolicyService struct {
 	client *Client
 }
+
+type PolicyOperator string
+
+const (
+	PolicyOperatorAll PolicyOperator = "ALL"
+	PolicyOperatorAny PolicyOperator = "ANY"
+)
+
+type PolicyViolationState string
+
+const (
+	PolicyViolationStateInfo PolicyViolationState = "INFO"
+	PolicyViolationStateWarn PolicyViolationState = "WARN"
+	PolicyViolationStateFail PolicyViolationState = "FAIL"
+)
 
 func (ps PolicyService) Get(ctx context.Context, policyUUID uuid.UUID) (p Policy, err error) {
 	req, err := ps.client.newRequest(ctx, http.MethodGet, fmt.Sprintf("/api/v1/policy/%s", policyUUID))
