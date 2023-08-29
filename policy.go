@@ -74,3 +74,23 @@ func (ps PolicyService) Update(ctx context.Context, policy Policy) (p Policy, er
 	_, err = ps.client.doRequest(req, &p)
 	return
 }
+
+func (ps PolicyService) AddProject(ctx context.Context, policyUUID, projectUUID uuid.UUID) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodPost, fmt.Sprintf("/api/v1/policy/%s/project/%s", policyUUID, projectUUID))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
+
+func (ps PolicyService) DeleteProject(ctx context.Context, policyUUID, projectUUID uuid.UUID) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/policy/%s/project/%s", policyUUID, projectUUID))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
