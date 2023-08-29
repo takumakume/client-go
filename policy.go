@@ -48,3 +48,13 @@ func (ps PolicyService) GetAll(ctx context.Context, po PageOptions) (p Page[Poli
 	p.TotalCount = res.TotalCount
 	return
 }
+
+func (ps PolicyService) Create(ctx context.Context, policy Policy) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodPut, "/api/v1/policy", withBody(policy))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
