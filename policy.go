@@ -54,3 +54,13 @@ func (ps PolicyService) Create(ctx context.Context, policy Policy) (p Policy, er
 	_, err = ps.client.doRequest(req, &p)
 	return
 }
+
+func (ps PolicyService) Delete(ctx context.Context, policyUUID uuid.UUID) (err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/policy/%s", policyUUID))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, nil)
+	return
+}
