@@ -64,3 +64,13 @@ func (ps PolicyService) Delete(ctx context.Context, policyUUID uuid.UUID) (err e
 	_, err = ps.client.doRequest(req, nil)
 	return
 }
+
+func (ps PolicyService) Update(ctx context.Context, policy Policy) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodPost, "/api/v1/policy", withBody(policy))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
