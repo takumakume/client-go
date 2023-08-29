@@ -98,3 +98,23 @@ func (ps PolicyService) DeleteProject(ctx context.Context, policyUUID, projectUU
 	_, err = ps.client.doRequest(req, &p)
 	return
 }
+
+func (ps PolicyService) AddTag(ctx context.Context, policyUUID uuid.UUID, tagName string) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodPost, fmt.Sprintf("/api/v1/policy/%s/tag/%s", policyUUID, tagName))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
+
+func (ps PolicyService) DeleteTag(ctx context.Context, policyUUID uuid.UUID, tagName string) (p Policy, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/policy/%s/tag/%s", policyUUID, tagName))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &p)
+	return
+}
