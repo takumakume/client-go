@@ -41,6 +41,7 @@ type Client struct {
 	Metrics           MetricsService
 	Permission        PermissionService
 	Policy            PolicyService
+	PolicyCondition   PolicyConditionService
 	PolicyViolation   PolicyViolationService
 	Project           ProjectService
 	ProjectProperty   ProjectPropertyService
@@ -86,6 +87,7 @@ func NewClient(baseURL string, options ...ClientOption) (*Client, error) {
 	client.Metrics = MetricsService{client: &client}
 	client.Permission = PermissionService{client: &client}
 	client.Policy = PolicyService{client: &client}
+	client.PolicyCondition = PolicyConditionService{client: &client}
 	client.PolicyViolation = PolicyViolationService{client: &client}
 	client.Project = ProjectService{client: &client}
 	client.ProjectProperty = ProjectPropertyService{client: &client}
