@@ -9,11 +9,15 @@ import (
 )
 
 type Policy struct {
-	UUID             uuid.UUID
+	UUID             uuid.UUID         `json:"uuid,omitempty"`
 	Name             string            `json:"name"`
 	Operator         string            `json:"operator"`
 	ViolationState   string            `json:"violationState"`
-	PolicyConditions []PolicyCondition `json:"policyConditions"`
+	PolicyConditions []PolicyCondition `json:"policyConditions,omitempty"`
+	IncludeChildren  bool              `json:"includeChildren,omitempty"`
+	Global           bool              `json:"global,omitempty"`
+	Projects         []Project         `json:"projects,omitempty"`
+	Tags             []Tag             `json:"tags,omitempty"`
 }
 
 type PolicyService struct {
