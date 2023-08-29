@@ -14,6 +14,10 @@ type Policy struct {
 	Operator         string            `json:"operator"`
 	ViolationState   string            `json:"violationState"`
 	PolicyConditions []PolicyCondition `json:"policyConditions"`
+	IncludeChildren  bool              `json:"includeChildren"`
+	Global           bool              `json:"global"`
+	Projects         []Project         `json:"projects,omitempty"`
+	Tags             []Tag             `json:"tags,omitempty"`
 }
 
 type PolicyService struct {
