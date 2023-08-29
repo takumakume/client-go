@@ -13,7 +13,7 @@ type Policy struct {
 	Name             string            `json:"name"`
 	Operator         string            `json:"operator"`
 	ViolationState   string            `json:"violationState"`
-	PolicyConditions []PolicyCondition `json:"policyConditions"`
+	PolicyConditions []PolicyCondition `json:"policyConditions,omitempty"`
 	IncludeChildren  bool              `json:"includeChildren"`
 	Global           bool              `json:"global"`
 	Projects         []Project         `json:"projects,omitempty"`
